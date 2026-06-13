@@ -7,7 +7,57 @@ sources:
       tables:
         - name: sales
           identifier: raw_gz_sales
+          description: "Daily sales transactions and order line details."
+          config:
+            freshness:
+              error_after: 
+                count: 90 
+                period: day
+            loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+
+          columns: 
+            - name: date_date
+              description: "The specific date when the purchase transaction occurred."
+            - name: orders_id
+              description: "Unique identifier for each order."
+            - name: pdt_id
+              description: "Unique identifier for each product sold."
+            - name: revenue
+              description: "Gross revenue generated from the sale."
+            - name: quantity
+              description: "The total number of product units ordered."
+          tests:
+            - unique:
+                arguments: 
+                  column_name: "orders_id || '-' || pdt_id"
+            #- dbt_utils.unique_combination_of_columns:
+                #arguments:
+                  #combination_of_columns:
+                    #- orders_id
+                    #- pdt_id
         - name: product
           identifier: raw_gz_product
+          description: "Master catalog containing product details and cost prices."
+          columns:
+            - name: products_id
+              description: "Unique identifier for the product."
+              tests:
+                - unique
+                - not_null
+            - name: purchase_price
+              description: "The unit internal wholesale cost price of the product."
         - name: ship
           identifier: raw_gz_ship
+          description: "Logistics data including shipping fees and operational costs per order."
+          columns:
+            - name: orders_id
+              description: "Unique identifier for the order."
+              tests:
+                - unique
+                - not_null
+            - name: shipping_fee
+              description: "The delivery amount charged to the customer for shipping."
+            - name: log_cost
+              description: "Internal logistics and warehouse operational cost for processing the order."
+            - name: ship_cost
+              description: "The actual shipping amount paid to the transport carrier company."
