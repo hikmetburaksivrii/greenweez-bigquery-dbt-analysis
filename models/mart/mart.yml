@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: finance_days
+    description: "Daily aggregated order metrics derived from operational orders data."

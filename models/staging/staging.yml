@@ -2,5 +2,8 @@ version: 2
 
 models:
   - name: stg_raw__product
+    description: "Stages raw product data by casting purchase price to float."
   - name: stg_raw__sales
+    description: "Stages raw sales data by renaming and selecting key fields such as order, product, revenue and quantity."
   - name: stg_raw__ship
+    description: "Stages raw shipping data by renaming and casting fields for shipping fee, log cost and ship cost per order."
