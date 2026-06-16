@@ -38,8 +38,12 @@ models:
   my_new_project:
     # Applies to all files under models/example/
     staging:
-      +materialized: table
+      +materialized: view
+      #+materialized: table
     intermediate:
-      +materialized: table
+      +materialized: view
+      #+materialized: table
     mart:
       +materialized: table
+      finance:
+        +schema: finance
