@@ -7,3 +7,7 @@ models:
     description: "Aggregates sales margin data at order level, calculating total revenue, quantity, purchase cost and margin per order."
   - name: int_order_operational
     description: "Enriches order margin data with shipping details to calculate operational margin per order."
+  - name: int_campaigns
+    description: "Data from all campaigns."
+  - name: int_campaigns_day
+    description: "Daily campaign data."
