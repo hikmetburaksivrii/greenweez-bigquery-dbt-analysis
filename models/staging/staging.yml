@@ -7,3 +7,12 @@ models:
     description: "Stages raw sales data by renaming and selecting key fields such as order, product, revenue and quantity."
   - name: stg_raw__ship
     description: "Stages raw shipping data by renaming and casting fields for shipping fee, log cost and ship cost per order."
+    
+  - name: stg_raw__adwords
+    description: "Stages raw AdWords data by renaming campgn_name and casting ads_cost to float."
+  - name: stg_raw__bing
+    description: "Stages raw Bing data by renaming campgn_name and casting ads_cost to float."
+  - name: stg_raw__criteo
+    description: "Stages raw Criteo data by renaming campgn_name and casting ads_cost to float."
+  - name: stg_raw__facebook
+    description: "Stages raw Facebook data by renaming campgn_name and casting ads_cost to float."

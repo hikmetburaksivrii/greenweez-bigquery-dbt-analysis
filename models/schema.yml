@@ -1,4 +1,4 @@
- # schema.yml
+# schema.yml
 version: 2
 sources:
     - name: raw
@@ -57,7 +57,83 @@ sources:
                 - not_null
             - name: shipping_fee
               description: "The delivery amount charged to the customer for shipping."
-            - name: log_cost
+            - name: logcost
               description: "Internal logistics and warehouse operational cost for processing the order."
             - name: ship_cost
               description: "The actual shipping amount paid to the transport carrier company."
+
+        - name: adwords
+          identifier: raw_gz_adwords
+          description: "Daily ad performance data from Google Ads."
+          columns:
+              - name: date_date
+                description: "Date of the ad performance metrics."
+              - name: paid_source
+                description: "Marketing channel source name (Adwords)."
+              - name: campaign_key
+                description: "Unique identifier for the ad campaign."
+              - name: camPGN_name
+                description: "Name of the marketing campaign."
+              - name: ads_cost
+                description: "Total cost spent on the campaign."
+              - name: impression
+                description: "Total number of ad impressions."
+              - name: click
+                description: "Total number of clicks received."
+
+        - name: bing
+          identifier: raw_gz_bing
+          description: "Daily ad performance data from Bing Ads."
+          columns:
+            - name: date_date
+              description: "Date of the ad performance metrics."
+            - name: paid_source
+              description: "Marketing channel source name (Bing)."
+            - name: campaign_key
+              description: "Unique identifier for the ad campaign."
+            - name: camPGN_name
+              description: "Name of the marketing campaign."
+            - name: ads_cost
+              description: "Total cost spent on the campaign."
+            - name: impression
+              description: "Total number of ad impressions."
+            - name: click
+              description: "Total number of clicks received."
+
+        - name: criteo
+          identifier: raw_gz_criteo
+          description: "Daily ad performance data from Criteo."
+          columns:
+            - name: date_date
+              description: "Date of the ad performance metrics."
+            - name: paid_source
+              description: "Marketing channel source name (Criteo)."
+            - name: campaign_key
+              description: "Unique identifier for the ad campaign."
+            - name: camPGN_name
+              description: "Name of the marketing campaign."
+            - name: ads_cost
+              description: "Total cost spent on the campaign."
+            - name: impression
+              description: "Total number of ad impressions."
+            - name: click
+              description: "Total number of clicks received."
+
+        - name: facebook
+          identifier: raw_gz_facebook
+          description: "Daily ad performance data from Facebook Ads."
+          columns:
+            - name: date_date
+              description: "Date of the ad performance metrics."
+            - name: paid_source
+              description: "Marketing channel source name (Facebook)."
+            - name: campaign_key
+              description: "Unique identifier for the ad campaign."
+            - name: camPGN_name
+              description: "Name of the marketing campaign."
+            - name: ads_cost
+              description: "Total cost spent on the campaign."
+            - name: impression
+              description: "Total number of ad impressions."
+            - name: click
+              description: "Total number of clicks received."
