@@ -1,5 +1,7 @@
-# you shouldn't commit these into source control
-# these are the default directory names, adjust/add to fit your needs
+# You Shouldn't Commit These Into Source Control!
+# These Are The Default Directory Names, Adjust Or Add To Fit Your Needs!
+# These Directories Are Not Tracked By Version Control!
+
 target/
 dbt_packages/
 logs/
